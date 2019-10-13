@@ -16,6 +16,25 @@
         margin: 0;
         padding: 0;
       }
+      .firstHeading {
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+      }
+
+      .bodyContent {
+        display: block;
+        font-size: 1em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      
     </style>
   </head>
   <body>
@@ -111,36 +130,79 @@
           ]
         });
 
-
-        var contentString = '<div id="content">'+
+        var locations = [
+        ["Atlanta", 33.7490, -84.3880, "What, WeWorry?", 
+          "WeWork\'s Widening Girth Raising Concerns About the Impact on Properties, Portfolios and Markets",
+          '"Moody\'s Withdraws WeWork\'s Credit", "Ratings for Lack of Sufficient Information", "Did You Hear? Colliers\' Kratz Keeps Climbing", "CBRE Group Buys New England Joint-Venture Partner"'], 
+        ["Nashville", 36.1627, -86.7816, "Nashville to Get its First Airbnb-Branded Apartments",
+          "Project Follows Newgard Development Group\'s $90M Deal for 328-Unit Olmsted",
+          '"Updated: City Office Buys 14-Bldg. Creative Office Complex The Quad for $51 Million", "Dallas-Based Firm Acquires Phoenix Multifamily Complex in Value-Add Play", "Local Developer Pays $8.9M for 1.3 Acres in Nashville", "IMT Capital Buys North Los Angeles Apartment Complex for $167 Million"'], 
+        ["Denver", 39.7392, -104.9903, "Denver-Area Apartment Market Dealing With Crush of New Units",
+        "Concessions Up, Rent Growth Slower Following Rush of Deliveries", '"Undersupply of Apartments Drives Los Angeles Market", "Chicago\'s Largest Condo Deconversion Signals Post-Recession Push To Rent", " Rent Growth Surging in Boston\'s Pricey Neighborhoods"'],
+        ["Boston", 42.3601, -71.0589, "Amazon Narrows HQ2 Search to 20 Markets",
+        "E-Commerce Giant Includes Many Major Markets but Also a Few Surprises in Running for $5 Billion, 50,000-job HQ in 2018",
+        '" \'Opportunity Zones\' Mean Some Local Communities Could Benefit More Than Others", "Port of LA Seeks Developer for 87-Acre Marina", "The Transit Factor in Amazon\'s HQ2 Selection Reflects Transportation\'s Growing Economic Development Clout", "HQ2: Where Amazon Goes, Other Companies Follow"'],
+        ["Dallas", 32.7767, -96.7970, "Exclusive: Dallas Office Building Could Set Texas Sales Record",
+          "1900 Pearl, Completed in January, May Be the State\'s Priciest Per Square Foot",
+          '"Office Tower in Boston\'s Seaport Sells for $450 Million, Large Office Record for 2018", "San Francisco Mayor Calls for Accountability in Shutdown of $2.2 Billion Salesforce Transit Center", "Local Investors Buy AT&T Headquarters Tower in Downtown Dallas"'
+          ]
+        ];
+        
+        var infowindow = new google.maps.InfoWindow();
+        function placeMarker( loc ) {
+          var latLng = new google.maps.LatLng( loc[1], loc[2]);
+          var marker = new google.maps.Marker({
+            position : latLng,
+            map      : map
+          });
+          var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">"System Failure" report: Low Seattle police morale and 40,000 hours wasted</h1>'+
-            '<div id="bodyContent">'+
-            '<p>The Downtown Seattle Association and many other neighborhood' + 
-            'groups have put out a report called "System Failure: Part Two" and ' +
-            'every day this week KOMO News has been breaking down its contents.</p>'+
-            '<p>Attribution: Uluru, <a href="https://komonews.com/news/local/system-failure-report-low-morale-within-seattle-police-and-40000-hours-wasted '+
-            '(last visited June 22, 2009).</p>'+
+            '<h1 id="firstHeading" class="firstHeading" style = display: block; font-size: 1.00 em; margin-top: 0.67em; margin-bottom: 0.67em; margin-left: 0; margin-right: 0; font-weight: bold;>' + locations[i][3] + '</h1>'+
+            '<div class="bodyContent">'+
+            '<p style = display: block; font-size: 1em; margin-top: 1.33em; margin-bottom: 1.33em; margin-left: 0; margin-right: 0;>' + locations[i][4] + '</p>'+
+            '<p class="bodyContent" style = display: block; font-size: 1em; margin-top: 1.33em; margin-bottom: 1.33em; margin-left: 0; margin-right: 0;>' + locations[i][5] + '</p>' +
             '</div>'+
             '</div>';
+            
+          google.maps.event.addListener(marker, 'mouseover', function() {
+            infowindow.setContent(contentString);
+            infowindow.open(map, marker);
+          });
+          google.maps.event.addListener(marker, 'mouseout', function(){
+            infowindow.close(map, marker);
+          });
+        }
+        for(var i=0; i<locations.length; i++) {
+          placeMarker( locations[i] );
+        }
 
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
-
-        var marker = new google.maps.Marker({
-          position: {lat: 47.606209, lng: -122.332069},
-          map: map,
-          title: 'Seattle'
-        });
-        marker.addListener('mouseover', function() {
-          infowindow.open(map, marker);
-        });
-        marker.addListener('mouseout', function() {
-          infowindow.close(map, marker);
-        });
-      }
+        // var contentString2 = '<div id="content">'+
+        //   '<div id="siteNotice">'+
+        //   '</div>'+
+        //   '<h1 id="firstHeading" class="firstHeading">Nashville to Get its First Airbnb-Branded Apartments</h1>'+
+        //   '<div id="bodyContent">'+
+        //   '<p>Project Follows Newgard Development Group\'s $90M Deal for 328-Unit Olmsted</p>'+
+        //   '<p>Related Articles: "Updated: City Office Buys 14-Bldg. Creative Office Complex The Quad for $51 Million", "Dallas-Based Firm Acquires Phoenix Multifamily Complex in Value-Add Play",' +
+        //   "Local Developer Pays $8.9M for 1.3 Acres in Nashville" +
+        //   ' "IMT Capital Buys North Los Angeles Apartment Complex for $167 Million"</p>' +
+        //   '</div>'+
+        //   '</div>';
+        // var infowindow = new google.maps.InfoWindow({
+        //   content: contentString2
+        // });
+        // var marker2 = new google.maps.Marker({
+        //   position: {lat: 36.1627, lng: -86.7816},
+        //   map: map,
+        //   title: 'Nashville'
+        // });
+        // marker2.addListener('mouseover', function() {
+        //   infowindow.open(map, marker);
+        // });
+        // marker2.addListener('mouseout', function() {
+        //   infowindow.close(map, marker);
+        // });
+    }
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtolc7_8BlJt6aOHsp1bCTHEDCevm9o8c&callback=initMap">
