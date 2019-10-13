@@ -34,7 +34,7 @@
         margin-left: 0;
         margin-right: 0;
       }
-      
+
     </style>
   </head>
   <body>
@@ -49,94 +49,323 @@
           center: {lat: 39.0119, lng: -98.4842},
           zoom: 4,
           styles: [
-            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
             {
-              featureType: 'administrative.locality',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "color": "#ebe3cd"
+                }
+              ]
             },
             {
-              featureType: 'poi',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+              "elementType": "labels.text.fill",
+              "stylers": [
+                {
+                  "color": "#523735"
+                }
+              ]
             },
             {
-              featureType: 'poi.park',
-              elementType: 'geometry',
-              stylers: [{color: '#263c3f'}]
+              "elementType": "labels.text.stroke",
+              "stylers": [
+                {
+                  "color": "#f5f1e6"
+                }
+              ]
             },
             {
-              featureType: 'poi.park',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#6b9a76'}]
+              "featureType": "administrative",
+              "elementType": "geometry.stroke",
+              "stylers": [
+                {
+                  "color": "#c9b2a6"
+                }
+              ]
             },
             {
-              featureType: 'road',
-              elementType: 'geometry',
-              stylers: [{color: '#38414e'}]
+              "featureType": "administrative.land_parcel",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
             },
             {
-              featureType: 'road',
-              elementType: 'geometry.stroke',
-              stylers: [{color: '#212a37'}]
+              "featureType": "administrative.land_parcel",
+              "elementType": "geometry.stroke",
+              "stylers": [
+                {
+                  "color": "#dcd2be"
+                }
+              ]
             },
             {
-              featureType: 'road',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#9ca5b3'}]
+              "featureType": "administrative.land_parcel",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                {
+                  "color": "#ae9e90"
+                }
+              ]
             },
             {
-              featureType: 'road.highway',
-              elementType: 'geometry',
-              stylers: [{color: '#746855'}]
+              "featureType": "administrative.neighborhood",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
             },
             {
-              featureType: 'road.highway',
-              elementType: 'geometry.stroke',
-              stylers: [{color: '#1f2835'}]
+              "featureType": "landscape.natural",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "color": "#dfd2ae"
+                }
+              ]
             },
             {
-              featureType: 'road.highway',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#f3d19c'}]
+              "featureType": "poi",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "color": "#dfd2ae"
+                }
+              ]
             },
             {
-              featureType: 'transit',
-              elementType: 'geometry',
-              stylers: [{color: '#2f3948'}]
+              "featureType": "poi",
+              "elementType": "labels.text",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
             },
             {
-              featureType: 'transit.station',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+              "featureType": "poi",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                {
+                  "color": "#93817c"
+                }
+              ]
             },
             {
-              featureType: 'water',
-              elementType: 'geometry',
-              stylers: [{color: '#17263c'}]
+              "featureType": "poi.business",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
             },
             {
-              featureType: 'water',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#515c6d'}]
+              "featureType": "poi.park",
+              "elementType": "geometry.fill",
+              "stylers": [
+                {
+                  "color": "#a5b076"
+                }
+              ]
             },
             {
-              featureType: 'water',
-              elementType: 'labels.text.stroke',
-              stylers: [{color: '#17263c'}]
+              "featureType": "poi.park",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                {
+                  "color": "#447530"
+                }
+              ]
+            },
+            {
+              "featureType": "road",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "color": "#f5f1e6"
+                }
+              ]
+            },
+            {
+              "featureType": "road",
+              "elementType": "labels",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "road",
+              "elementType": "labels.icon",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "road.arterial",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "color": "#fdfcf8"
+                }
+              ]
+            },
+            {
+              "featureType": "road.arterial",
+              "elementType": "labels",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "road.highway",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "color": "#f8c967"
+                }
+              ]
+            },
+            {
+              "featureType": "road.highway",
+              "elementType": "geometry.stroke",
+              "stylers": [
+                {
+                  "color": "#e9bc62"
+                }
+              ]
+            },
+            {
+              "featureType": "road.highway",
+              "elementType": "labels",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "road.highway.controlled_access",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "color": "#e98d58"
+                }
+              ]
+            },
+            {
+              "featureType": "road.highway.controlled_access",
+              "elementType": "geometry.stroke",
+              "stylers": [
+                {
+                  "color": "#db8555"
+                }
+              ]
+            },
+            {
+              "featureType": "road.local",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "road.local",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                {
+                  "color": "#806b63"
+                }
+              ]
+            },
+            {
+              "featureType": "transit",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "transit.line",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "color": "#dfd2ae"
+                }
+              ]
+            },
+            {
+              "featureType": "transit.line",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                {
+                  "color": "#8f7d77"
+                }
+              ]
+            },
+            {
+              "featureType": "transit.line",
+              "elementType": "labels.text.stroke",
+              "stylers": [
+                {
+                  "color": "#ebe3cd"
+                }
+              ]
+            },
+            {
+              "featureType": "transit.station",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "color": "#dfd2ae"
+                }
+              ]
+            },
+            {
+              "featureType": "water",
+              "elementType": "geometry.fill",
+              "stylers": [
+                {
+                  "color": "#b9d3c2"
+                }
+              ]
+            },
+            {
+              "featureType": "water",
+              "elementType": "labels.text",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "water",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                {
+                  "color": "#92998d"
+                }
+              ]
             }
           ]
         });
 
         var locations = [
-        ["Atlanta", 33.7490, -84.3880, "What, WeWorry?", 
+        ["Atlanta", 33.7490, -84.3880, "What, WeWorry?",
           "WeWork\'s Widening Girth Raising Concerns About the Impact on Properties, Portfolios and Markets",
-          '"Moody\'s Withdraws WeWork\'s Credit", "Ratings for Lack of Sufficient Information", "Did You Hear? Colliers\' Kratz Keeps Climbing", "CBRE Group Buys New England Joint-Venture Partner"'], 
+          '"Moody\'s Withdraws WeWork\'s Credit", "Ratings for Lack of Sufficient Information", "Did You Hear? Colliers\' Kratz Keeps Climbing", "CBRE Group Buys New England Joint-Venture Partner"'],
         ["Nashville", 36.1627, -86.7816, "Nashville to Get its First Airbnb-Branded Apartments",
           "Project Follows Newgard Development Group\'s $90M Deal for 328-Unit Olmsted",
-          '"Updated: City Office Buys 14-Bldg. Creative Office Complex The Quad for $51 Million", "Dallas-Based Firm Acquires Phoenix Multifamily Complex in Value-Add Play", "Local Developer Pays $8.9M for 1.3 Acres in Nashville", "IMT Capital Buys North Los Angeles Apartment Complex for $167 Million"'], 
+          '"Updated: City Office Buys 14-Bldg. Creative Office Complex The Quad for $51 Million", "Dallas-Based Firm Acquires Phoenix Multifamily Complex in Value-Add Play", "Local Developer Pays $8.9M for 1.3 Acres in Nashville", "IMT Capital Buys North Los Angeles Apartment Complex for $167 Million"'],
         ["Denver", 39.7392, -104.9903, "Denver-Area Apartment Market Dealing With Crush of New Units",
         "Concessions Up, Rent Growth Slower Following Rush of Deliveries", '"Undersupply of Apartments Drives Los Angeles Market", "Chicago\'s Largest Condo Deconversion Signals Post-Recession Push To Rent", " Rent Growth Surging in Boston\'s Pricey Neighborhoods"'],
         ["Boston", 42.3601, -71.0589, "Amazon Narrows HQ2 Search to 20 Markets",
@@ -147,7 +376,7 @@
           '"Office Tower in Boston\'s Seaport Sells for $450 Million, Large Office Record for 2018", "San Francisco Mayor Calls for Accountability in Shutdown of $2.2 Billion Salesforce Transit Center", "Local Investors Buy AT&T Headquarters Tower in Downtown Dallas"'
           ]
         ];
-        
+
         var infowindow = new google.maps.InfoWindow();
         function placeMarker( loc ) {
           var latLng = new google.maps.LatLng( loc[1], loc[2]);
@@ -164,7 +393,7 @@
             '<p class="bodyContent" style = display: block; font-size: 1em; margin-top: 1.33em; margin-bottom: 1.33em; margin-left: 0; margin-right: 0;>' + locations[i][5] + '</p>' +
             '</div>'+
             '</div>';
-            
+
           google.maps.event.addListener(marker, 'mouseover', function() {
             infowindow.setContent(contentString);
             infowindow.open(map, marker);
@@ -172,6 +401,8 @@
           google.maps.event.addListener(marker, 'mouseout', function(){
             infowindow.close(map, marker);
           });
+
+
         }
         for(var i=0; i<locations.length; i++) {
           placeMarker( locations[i] );
